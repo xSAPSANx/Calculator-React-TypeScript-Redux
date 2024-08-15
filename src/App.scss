@@ -1,0 +1,22 @@
+.calcBox {
+	width: 350px;
+	height: 450px;
+	margin: 150px auto;
+	border: 3px solid;
+	border-radius: 10px;
+}
+
+.calcScreen {
+	width: 300px;
+	height: 50px;
+	margin: 25px;
+	border: 1px solid;
+	border-radius: 6px;
+}
+
+.numGrid {
+	display: grid;
+	grid-template-columns: 60px 60px 60px;
+	margin-left: 25px;
+	gap: 10px;
+}
