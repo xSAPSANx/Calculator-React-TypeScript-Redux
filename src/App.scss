@@ -1,22 +1,67 @@
+#root {
+	position: relative;
+	display: flex;
+	left: -145px;
+}
+
 .calcBox {
 	width: 350px;
 	height: 450px;
-	margin: 150px auto;
+	margin: 150px auto 150px 0px;
 	border: 3px solid;
 	border-radius: 10px;
+	background-color: white;
+	z-index: 3;
 }
 
 .calcScreen {
 	width: 300px;
 	height: 50px;
-	margin: 25px;
+	margin: 25px 25px 0px 25px;
 	border: 1px solid;
 	border-radius: 6px;
+	font-size: 40px;
+	padding-left: 5px;
+}
+
+.allButton {
+	display: flex;
+	position: absolute;
+	top: 240px;
 }
 
 .numGrid {
 	display: grid;
 	grid-template-columns: 60px 60px 60px;
+	grid-template-rows: 60px 60px 60px;
 	margin-left: 25px;
+	margin-top: 70px;
 	gap: 10px;
+}
+
+.mathColumn {
+	margin-left: 43px;
+	z-index: 3;
+}
+
+button {
+	font-size: 30px;
+	border: 1px solid;
+	border-radius: 8px;
+	text-align: center;
+	&:hover {
+		transition: 0.2s;
+		background-color: rgb(195, 195, 195);
+	}
+}
+
+.specButton {
+	position: relative;
+	margin: 10px 0px 10px 25px;
+	z-index: 3;
+	// .historyButton {
+	// }
+	.clearButton {
+		margin-left: 3px;
+	}
 }

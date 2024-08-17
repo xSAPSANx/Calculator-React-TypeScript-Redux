@@ -1,0 +1,19 @@
+.modal {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	margin: 175px 0px 150px auto;
+	border: 3px solid;
+	border-right: 0px;
+	border-radius: 10px;
+	z-index: 1;
+	transition: transform 0.5s ease-in-out;
+}
+.modal.active {
+	transform: translate3d(320px, 0, 0);
+}
+
+.modalContent {
+	z-index: 1;
+	position: relative;
+}
