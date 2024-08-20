@@ -1,7 +1,7 @@
 import './num.scss'
 
 type propsButNum = {
-	num: number
+	num: number | string
 	click: Function
 }
 
