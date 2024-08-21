@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from './redux/hooks'
 
 import './App.scss'
-import ButNum from './components/buttons/num'
-import ButMath from './components/buttons/math'
+import NumBlock from './components/numblock'
+import MathBlock from './components/mathBlock'
 import ClearButton from './components/buttons/clear'
-import Equal from './components/buttons/equal'
-import ModalContent from './components/modal'
+import ModalBlock from './components/modalBlock'
 import ButHistory from './components/buttons/history'
 import { setScreen, equalScreen } from './redux/slices/calcSlice'
 import { setHistory, changeFirst } from './redux/slices/historySlice'
@@ -14,7 +13,7 @@ import { setHistory, changeFirst } from './redux/slices/historySlice'
 function App() {
 	const dispatch = useAppDispatch()
 	const screen = useAppSelector(state => state.calcSlice.screen)
-	let historyArr = useAppSelector(state => state.historySlice.historyArr)
+	const historyArr = useAppSelector(state => state.historySlice.historyArr)
 
 	const [active, setActive] = useState(true)
 
@@ -43,16 +42,7 @@ function App() {
 	return (
 		<>
 			<div className={active ? 'modal active' : 'modal'}>
-				<ModalContent num={0} historyArr={historyArr} />
-				<ModalContent num={1} historyArr={historyArr} />
-				<ModalContent num={2} historyArr={historyArr} />
-				<ModalContent num={3} historyArr={historyArr} />
-				<ModalContent num={4} historyArr={historyArr} />
-				<ModalContent num={5} historyArr={historyArr} />
-				<ModalContent num={6} historyArr={historyArr} />
-				<ModalContent num={7} historyArr={historyArr} />
-				<ModalContent num={8} historyArr={historyArr} />
-				<ModalContent num={9} historyArr={historyArr} />
+				<ModalBlock />
 			</div>
 			<div className='calcBox'>
 				<div className='calcScreen'>{screen}</div>
@@ -61,26 +51,8 @@ function App() {
 					<ClearButton click={handleClickClear} />
 				</div>
 				<div className='allButton'>
-					<div className='numGrid'>
-						<ButNum num={1} click={handleClick} />
-						<ButNum num={2} click={handleClick} />
-						<ButNum num={3} click={handleClick} />
-						<ButNum num={4} click={handleClick} />
-						<ButNum num={5} click={handleClick} />
-						<ButNum num={6} click={handleClick} />
-						<ButNum num={7} click={handleClick} />
-						<ButNum num={8} click={handleClick} />
-						<ButNum num={9} click={handleClick} />
-						<ButNum num={0} click={handleClick} />
-						<ButNum num={'.'} click={handleClick} />
-					</div>
-					<div className='mathColumn'>
-						<ButMath symbol={'+'} click={handleClick} />
-						<ButMath symbol={'-'} click={handleClick} />
-						<ButMath symbol={'*'} click={handleClick} />
-						<ButMath symbol={'/'} click={handleClick} />
-						<Equal symbol={'='} click={handleClickEqual} />
-					</div>
+					<NumBlock handleClick={handleClick} />
+					<MathBlock handleClick={handleClick} handleClickEqual={handleClickEqual} />
 				</div>
 			</div>
 		</>

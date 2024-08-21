@@ -7,8 +7,14 @@ type propsButNum = {
 
 function ButNum(props: propsButNum) {
 	let stringNum: string = String(props.num)
+	let pixels
+	if (props.num === 0) {
+		pixels = {
+			width: '130px',
+		}
+	}
 	return (
-		<button className='buttonNum' onClick={() => props.click(stringNum)}>
+		<button className='buttonNum' style={pixels} onClick={() => props.click(stringNum)}>
 			{props.num}
 		</button>
 	)
