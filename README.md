@@ -1,4 +1,4 @@
-Используемые технологии:
+Technologies used:
 -React
 -TypeScript
 -Redux toolkit
