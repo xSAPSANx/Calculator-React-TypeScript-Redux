@@ -7,7 +7,7 @@ type propsEqual = {
 
 function Equal(props: propsEqual) {
 	return (
-		<button className='buttonMath' onClick={() => props.click()}>
+		<button className='buttonMath buttonEqual' onClick={() => props.click()}>
 			{props.symbol}
 		</button>
 	)

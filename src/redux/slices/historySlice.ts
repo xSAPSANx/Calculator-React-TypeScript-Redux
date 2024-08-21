@@ -4,7 +4,7 @@ type TypeState = {
 	historyArr: string[]
 }
 
-const initialState: TypeState = {
+let initialState: TypeState = {
 	historyArr: [],
 }
 
@@ -15,9 +15,12 @@ const historySlice = createSlice({
 		setHistory(state, action) {
 			state.historyArr.push(action.payload)
 		},
+		changeFirst(state) {
+			state.historyArr.shift()
+		},
 	},
 })
 
-export const { setHistory } = historySlice.actions
+export const { setHistory, changeFirst } = historySlice.actions
 
 export default historySlice.reducer

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from './redux/hooks'
 
 import './App.scss'
@@ -9,12 +9,12 @@ import Equal from './components/buttons/equal'
 import ModalContent from './components/modal'
 import ButHistory from './components/buttons/history'
 import { setScreen, equalScreen } from './redux/slices/calcSlice'
-import { setHistory } from './redux/slices/historySlice'
+import { setHistory, changeFirst } from './redux/slices/historySlice'
 
 function App() {
 	const dispatch = useAppDispatch()
 	const screen = useAppSelector(state => state.calcSlice.screen)
-	const historyArr = useAppSelector(state => state.historySlice.historyArr)
+	let historyArr = useAppSelector(state => state.historySlice.historyArr)
 
 	const [active, setActive] = useState(true)
 
@@ -30,6 +30,11 @@ function App() {
 		dispatch(equalScreen(eval(screen)))
 		dispatch(setHistory(screen + '=' + eval(screen)))
 	}
+	useEffect(() => {
+		if (historyArr[10] !== undefined) {
+			dispatch(changeFirst())
+		}
+	}, [historyArr])
 
 	function handleClickClear() {
 		dispatch(equalScreen(''))
