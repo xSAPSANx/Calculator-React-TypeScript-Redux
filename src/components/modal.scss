@@ -23,3 +23,13 @@
 	border-bottom: 1px solid;
 	overflow: hidden;
 }
+
+@media (max-width: 980px) {
+	.modal.active {
+		transform: translate3d(0, 0, 0);
+	}
+	.modal {
+		margin: 0px auto 0px auto;
+		transform: translate3d(0, -410px, 0);
+	}
+}
