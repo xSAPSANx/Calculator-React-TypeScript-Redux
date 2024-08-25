@@ -1,6 +1,6 @@
-Technologies used:
--React
--TypeScript
--Redux toolkit
--Scss
--Vite
+#Technologies used:
+- React
+- TypeScript
+- Redux toolkit
+- Scss
+- Vite
