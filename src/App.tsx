@@ -15,7 +15,7 @@ function App() {
 	const screen = useAppSelector(state => state.calcSlice.screen)
 	const historyArr = useAppSelector(state => state.historySlice.historyArr)
 
-	const [active, setActive] = useState(true)
+	const [active, setActive] = useState(false)
 
 	function handleClick(props: string) {
 		dispatch(setScreen(props))
