@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from './redux/hooks'
 
 import './App.scss'
-import NumBlock from './components/numblock'
+import NumBlock from './components/numBlock'
 import MathBlock from './components/mathBlock'
 import ClearButton from './components/buttons/clear'
 import ModalBlock from './components/modalBlock'
